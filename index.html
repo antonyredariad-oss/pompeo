@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pompeo - Unique Porcelain & Stone Collection</title>
+    <style>
+        @import url('https://googleapis.com');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-image: image-set(url('img/imgi_29_5bc26c68ca643a35ff2e403f_scott-webb-268893-unsplash.jpg') 1x);
+            color: #111111;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 10%;
+            background-color: #ffffff;
+            position: relative;
+            z-index: 10;
+        }
+
+        .logo img {
+            height: 32px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #666666;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover, 
+        .nav-links a.active {
+            color: #111111;
+        }
+
+        .nav-links a.cart-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-left: 1px solid #e0e0e0;
+            padding-left: 20px;
+        }
+
+        .nav-links a.cart-btn img {
+            width: 18px;
+            height: auto;
+        }
+
+        .hero {
+            position: relative;
+            min-height: calc(100vh - 92px);
+            display: flex;
+            align-items: center;
+            padding: 0 10%;
+            background: linear-gradient(135deg, #ffffff 60%, #f9f9f9 100%);
+        }
+
+        .hero-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            gap: 50px;
+        }
+
+        .hero-text {
+            flex: 1;
+            max-width: 550px;
+        }
+
+        .subtitle {
+            color: #d67462;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .hero-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 56px;
+            font-weight: 700;
+            line-height: 1.15;
+            color: #111111;
+            margin-bottom: 25px;
+        }
+
+        .hero-text h1 .ampersand {
+            font-family: 'Playfair Display', serif;
+            color: #d67462;
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        .description {
+            color: #777777;
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+
+        .btn-shop {
+            display: inline-block;
+            background-color: #ac1b1b;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 18px 38px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn-shop:hover {
+            background-color: #8e1414;
+            transform: translateY(-2px);
+        }
+
+        .hero-image {
+            flex: 1.2;
+            display: flex;
+            justify-content: flex-end;
+            position: relative;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .categories-section {
+            padding: 100px 10%;
+            background-color: #ffffff;
+            text-align: center;
+            position: relative;
+        }
+
+        .vertical-text {
+            position: absolute;
+            left: 3%;
+            top: 50%;
+            transform: translateY(-50%) rotate(-90deg);
+            transform-origin: center center;
+            color: #e0e0e0;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .categories-section .section-tag {
+            color: #d67462;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .categories-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 40px;
+            font-weight: 700;
+            color: #111111;
+            margin-bottom: 60px;
+        }
+
+        .categories-section h2 .ampersand {
+            font-family: 'Playfair Display', serif;
+            color: #d67462;
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        .circle-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 80px;
+            margin-bottom: 90px;
+            flex-wrap: wrap;
+        }
+
+        .circle-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .circle-bg {
+            width: 210px;
+            height: 210px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .circle-bg:hover {
+            transform: scale(1.05);
+        }
+
+        .circle-vases { background-color: #dcae73; }
+        .circle-mugs { background-color: #ea5d23; }
+        .circle-plates { background-color: #9c1313; }
+
+        .circle-bg img {
+            width: 45px;
+            height: auto;
+        }
+
+        .circle-bg span {
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .features-grid {
+            display: flex;
+            justify-content: space-between;
+            gap: 50px;
+            text-align: left;
+            max-width: 1100px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        .feature-box {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .feature-box h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            font-weight: 700;
+            line-height: 1.3;
+            color: #111111;
+            margin-bottom: 20px;
+        }
+
+        .feature-box p {
+            color: #777777;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+           .featured-product-section {
+            padding: 100px 10%;
+            background-color: #ffffff;
+            position: relative;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .featured-product-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1100px;
+            margin: 0 auto;
+            gap: 80px;
+        }
+
+        .product-image-side {
+            flex: 1.2;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 400px;
+        }
+
+        .image-bg-box {
+            position: absolute;
+            width: 100%;
+            height: 70%;
+            background-color: #f4f4f4;
+            z-index: 1;
+            left: 0;
+        }
+
+        .product-image-side img {
+            max-width: 65%;
+            height: auto;
+            object-fit: contain;
+            position: relative;
+            z-index: 2;
+        }
+
+        .product-text-side {
+            flex: 1;
+        }
+
+        .product-text-side h2 {
+            font-size: 26px;
+            font-weight: 600;
+            color: #111111;
+            margin-bottom: 20px;
+        }
+
+        .product-text-side p {
+            color: #777777;
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .view-details-link {
+            font-size: 12px;
+            font-weight: 600;
+            color: #111111;
+            text-decoration: none;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-bottom: 2px solid #111111;
+            padding-bottom: 4px;
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .view-details-link:hover {
+            color: #ac1b1b;
+            border-color: #ac1b1b;
+        }
+
+        .side-vertical-tag {
+            position: absolute;
+            right: 3%;
+            top: 50%;
+            transform: translateY(-50%) rotate(90deg);
+            transform-origin: center center;
+            color: #e5e5e5;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+.collection-section {
+    padding: 80px 10%;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.collection-section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #111111;
+    margin-bottom: 50px;
+}
+
+.collection-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto 30px auto;
+}
+
+.collection-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.collection-item__image-box {
+    width: 100%;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-bottom: 20px;
+    aspect-ratio: 1 / 1;
+}
+
+.collection-item__image-box img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.collection-item:hover .collection-item__image-box img {
+    transform: scale(1.03);
+}
+
+.collection-item__title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #111111;
+    margin-bottom: 8px;
+}
+
+.collection-item__price {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    color: #777777;
+}
+
+.collection-action {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.btn-view-all {
+    display: inline-block;
+    background-color: #ac1b1b;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 16px 32px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    transition: background-color 0.3s;
+}
+
+.btn-view-all:hover {
+    background-color: #8e1414;
+}
+.shop-banner {
+    width: 100%;
+    min-height: 450px;
+    display: flex;
+    align-items: center;
+    padding: 60px 10%;
+    background-image: url('img/imgi_31_5bb966fd82df351adbb449c6_raul-cacho-oses-779595-unsplash-p-3200.jpg');
+    background-size: cover;
+    background-position: center right;
+    background-repeat: no-repeat;
+    background-color: #fcfcfc;
+}
+
+.banner-content {
+    max-width: 480px;
+    text-align: left;
+}
+
+.banner-tag {
+    color: #d67462;
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.banner-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 38px;
+    font-weight: 600;
+    color: #111111;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.banner-desc {
+    font-family: 'Poppins', sans-serif;
+    color: #666666;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.banner-desc a {
+    color: #ac1b1b;
+    text-decoration: underline;
+}
+
+.btn-collection {
+    display: inline-block;
+    background-color: #ac1b1b;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 18px 36px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    transition: background-color 0.3s;
+}
+.newsletter-section {
+    padding: 100px 10%;
+    background-color: #ffffff;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.newsletter-icon {
+    width: 70px;
+    height: 70px;
+    background-color: #dcae73;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.newsletter-icon img {
+    width: 32px;
+    height: auto;
+}
+
+.newsletter-tag {
+    color: #d67462;
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.newsletter-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    color: #111111;
+    margin-bottom: 45px;
+}
+
+.newsletter-title .ampersand {
+    font-family: 'Playfair Display', serif;
+    color: #d67462;
+    font-style: italic;
+    font-weight: 400;
+}
+
+.newsletter-form {
+    display: flex;
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 25px;
+}
+
+.input-wrapper {
+    flex: 1;
+    position: relative;
+}
+
+.newsletter-input {
+    width: 100%;
+    padding: 18px 25px;
+    border: 1px solid #e0e0e0;
+    border-right: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    color: #111111;
+    outline: none;
+}
+
+.newsletter-input::placeholder {
+    color: #aaaaaa;
+}
+
+.btn-subscribe {
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    padding: 0 35px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-subscribe:hover {
+    background-color: #222222;
+}
+
+.newsletter-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.newsletter-checkbox input {
+    accent-color: #0066cc;
+    width: 14px;
+    height: 14px;
+}
+
+.newsletter-checkbox span {
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    color: #777777;
+}
+
+.vertical-text {
+    position: absolute;
+    right: 3%;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    transform-origin: center center;
+    color: #e0e0e0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    white-space: nowrap;
+}
+.btn-collection:hover {
+    background-color: #8e1414;
+}
+.main-footer {
+    padding: 80px 10% 30px 10%;
+    background-color: #ffffff;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-top {
+    margin-bottom: 60px;
+}
+
+.footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    font-style: italic;
+    color: #111111;
+    margin-bottom: 20px;
+}
+
+.footer-creed {
+    color: #777777;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.footer-info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto 80px auto;
+}
+
+.footer-info-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.info-icon img {
+    width: 24px;
+    height: auto;
+}
+
+.footer-info-item h3 {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #111111;
+    margin-bottom: 15px;
+}
+
+.footer-info-item p {
+    color: #777777;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-info-item a {
+    color: #777777;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-info-item a:hover {
+    color: #111111;
+}
+
+.footer-bottom {
+    border-top: 1px solid #f0f0f0;
+    padding-top: 30px;
+}
+
+.footer-bottom p {
+    color: #999999;
+    font-size: 12px;
+}
+
+.footer-bottom strong {
+    color: #666666;
+    font-weight: 500;
+}
+        @media (max-width: 1024px) {
+            .navbar { padding: 20px 5%; }
+            .hero { padding: 60px 5%; }
+            .hero-text h1 { font-size: 42px; }
+            .categories-section { padding: 80px 5%; }
+            .circle-grid { gap: 40px; }
+            .vertical-text { display: none; }
+        }
+
+        @media (max-width: 768px) {
+            .navbar { flex-direction: column; gap: 20px; }
+            .hero-container { flex-direction: column-reverse; text-align: center; }
+            .hero-image { justify-content: center; margin-bottom: 30px; }
+            .nav-links a.cart-btn { border-left: none; padding-left: 0; }
+            .features-grid { text-align: center; gap: 40px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+            <img src="img/Screenshot 2026-08-11 235122.png" alt="Pompeo Logo">
+        </div>
+        <nav class="nav-links">
+            <a href="#" class="active">HOME</a>
+            <a href="#">ABOUT</a>
+            <a href="#">SHOP</a>
+            <a href="#">CONTACT</a>
+            <a href="#" class="cart-btn">
+                <img src="img/5bbfa9a53c082260a48d15ef_shoping cart (1).svg" alt="Cart Icon">
+                <span>Cart</span>
+            </a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-text">
+                <p class="subtitle">POMPEO POTTERY</p>
+                <h1>Unique Porcelain <span class="ampersand">&</span> <br> Stone Collection</h1>
+                <p class="description">Unique & modern pottery made by our master in porcelain & stones</p>
+                <a href="#" class="btn-shop">SHOP COLLECTION</a>
+            </div>
+            <div class="hero-image">
+                <img src="img/Screenshot 2026-08-11 234239.png" alt="Featured Ceramic Collection with Fern and Gold Frame">
+            </div>
+        </div>
+    </section>
+<br>
+<hr>
+<br>
+    <section class="categories-section">
+        <div class="vertical-text">HAND CRAFT POTTERY</div>
+        
+        <p class="section-tag">PRODUCT CATEGORIES</p>
+        <h2>Porcelain <span class="ampersand">&</span> Pottery</h2>
+
+        <div class="circle-grid">
+            <a href="#" class="circle-item">
+                <div class="circle-bg circle-vases">
+                    <img src="img/imgi_2_5bb7874064724534dc9870d0_icons8-pottery-64.png" alt="Vases Icon">
+                    <span>VASES</span>
+                </div>
+            </a>
+            <a href="#" class="circle-item">
+                <div class="circle-bg circle-mugs">
+                    <img src="img/imgi_3_5bb7876aedf07b21c27e7b66_icons8-salad-bowl-64.png" alt="Mugs Icon">
+                    <span>MUGS</span>
+                </div>
+            </a>
+            <a href="#" class="circle-item">
+                <div class="circle-bg circle-plates">
+                    <img src="img/imgi_4_5bb78d5e9e1f337308de45cf_ICON-22.png" alt="Plates Icon">
+                    <span>PLATES</span>
+                </div>
+            </a>
+</div>
+<br>
+<hr>
+<br>
+   <h1>Unique Porcelain & Stone Collection</h1> 
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus posuere.</p>
+   
+<section class="featured-product-section">
+        <div class="side-vertical-tag">FEATURED PRODUCTS</div>
+        <div class="featured-product-container">
+            <div class="product-image-side">
+                <div class="image-bg-box"></div>
+                <img src="img/imgi_5_5bb9668024337c19082edcaf_orientovase.png" alt="Gold & Black Pottery">
+            </div>
+            <div class="product-text-side">
+                <h2>Gold & Black Pottery</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore dolore aua. Ut enim ad minim veniam, quis nostrud exercitationulco laboris nisi ut aliquip ex ea commodo consequatuisaute.</p>
+                <a href="#" class="view-details-link">View Details</a>
+            </div>
+        </div>
+    </section>
+
+        <section class="featured-product-section">
+        <div class="featured-product-container row-reverse-container">
+            <div class="product-image-side">
+                <div class="image-bg-box"></div>
+                <img src="img/imgi_6_5bb381e8f20c2e1db6f8800c_blouse.png" alt="Orange Ceramic Vase">
+            </div>
+            <div class="product-text-side">
+                <h2>Orange Ceramic</h2>
+                <p>Pri cu dico labores officiis, odio principes complectitur ad sea. Sea id doctus forensibus, nec lorem vocent aliquam eu. Aliquid definitiones id cum, ad meliore perpetua referrentur sed. Quas suscipit ad mea verear vivendo tincidunt.</p>
+                <a href="#" class="view-details-link">View Details</a>
+            </div>
+        </div>
+    </section>
+<div class="side-tag">OUR ONLINE STORE</div>
+<p class="section-tag">OUR ONLINE STORE</p>
+<h2>Pottery Collection</h2>
+<br>
+<hr>
+<br>
+<div class="collection-grid">
+    <div class="collection-item">
+        <div class="collection-item__image-box">
+            <img src="img/imgi_7_5bbbd7e1e364e913f38fed48_5bb3def89ab3aa39fda26d59_plate-1.png" alt="Decor Plate">
+        </div>
+        <h3 class="collection-item__title">Decor Plate</h3>
+        <p class="collection-item__price">$ 65.00 USD</p>
+    </div>
+    
+    <div class="collection-item">
+        <div class="collection-item__image-box">
+            <img src="img/imgi_21_5bbbd7f0e364e976af8fed4d_5bb3df47aa273fe65085a78f_oriento-663905-unsplash-p-1600-p-500.png" alt="Mint Pottery">
+        </div>
+        <h3 class="collection-item__title">Mint Pottery</h3>
+        <p class="collection-item__price">$ 75.00 USD</p>
+    </div>
+    
+    <div class="collection-item">
+        <div class="collection-item__image-box">
+            <img src="img/imgi_22_5bbbd7f879491efbeb9d8269_5bb3d671edf33b1f76f5aa0d_modern-essentials-792823-unsplash-p-500.png" alt="Set Of Potterys">
+        </div>
+        <h3 class="collection-item__title">Set Of Potterys</h3>
+        <p class="collection-item__price">$ 125.00 USD</p>
+    </div>
+</div>
+
+<div class="collection-grid">
+    <div class="collection-item">
+        <div class="collection-item__image-box">
+            <img src="img/imgi_23_5bbbd804f8cd66eab8cc490c_5bb3febae6340f5ff015e85b_blouse-p-500.png" alt="Decor Plate">
+        </div>
+        <h3 class="collection-item__title">Decor Plate</h3>
+        <p class="collection-item__price">$ 65.00 USD</p>
+    </div>
+    
+    <div class="collection-item">
+        <div class="collection-item__image-box">
+            <img src="img/imgi_24_5bbbd80e7ddaf62b3e2460bb_5bb3cedbb3465c5181324caa_212-unsplash-(1)-p-500.png" alt="Mint Pottery">
+        </div>
+        <h3 class="collection-item__title">Mint Pottery</h3>
+        <p class="collection-item__price">$ 75.00 USD</p>
+    </div>
+    
+    <div class="collection-item">
+        <div class="collection-item__image-box">
+            <img src="img/imgi_25_5bbbd819e364e903ba8fee0c_5bb3c9f370f1175d66fc5d5a_oriento-663881-unsplash-p-500.png" alt="Set Of Potterys">
+        </div>
+        <h3 class="collection-item__title">Set Of Potterys</h3>
+        <p class="collection-item__price">$ 125.00 USD</p>
+    </div>
+</div>
+
+<div class="collection-action">
+    <a href="#" class="btn-view-all">VIEW ALL PRODUCTS</a>
+</div>
+<br>
+<hr>
+<br>
+<section class="shop-banner">
+    <div class="banner-content">
+        <span class="banner-tag">POMPEO POTTERY</span>
+        <h2 class="banner-title">Ready to start shopping?</h2>
+        <p class="banner-desc">Lorem ipsum dolor sit amet, <a href="#">consectetur adipiscing elit</a>. Suspendisse varius enim in eros elementum.</p>
+        <a href="#" class="btn-collection">NEW COLLECTION</a>
+    </div>
+</section>
+    </div>
+<br>
+<hr>
+<br>
+<section class="newsletter-section">
+    <div class="newsletter-icon">
+        <img src="img/imgi_32_5baf7b8b7a16ad6c3bda1f4d_icons8-paper-plane-64.png" alt="Newsletter Icon">
+    </div>
+    <span class="newsletter-tag">LATEST NEWS</span>
+    <h2 class="newsletter-title">Latest news <span class="ampersand">&</span> New updates</h2>
+    
+    <form class="newsletter-form">
+        <div class="input-wrapper">
+            <input type="email" placeholder="Enter your email" required class="newsletter-input">
+        </div>
+        <button type="submit" class="btn-subscribe">SUBSCRIBE</button>
+    </form>
+    
+    <label class="newsletter-checkbox">
+        <input type="checkbox" checked>
+        <span>Sign up for our newsletter</span>
+    </label>
+    
+    <div class="vertical-text">LET'S GET IN TOUCH</div>
+</section>
+<hr>
+<footer class="main-footer">
+    <div class="footer-top">
+        <h2 class="footer-logo">Pompeo</h2>
+        <p class="footer-creed">I have always striven to fix beauty in wood, stone,<br>glass or pottery, that has been my creed.</p>
+    </div>
+
+    <div class="footer-info-grid">
+        <div class="footer-info-item">
+            <div class="info-icon">
+                <img src="img/imgi_13_5bc61f43b6ba2a3332ee30f4_icons8-secured-letter-80 (1).png" alt="Email">
+            </div>
+            <h3>EMAIL</h3>
+            <p><a href="mailto:pompeopotery@gmail.com">pompeopotery@gmail.com</a></p>
+        </div>
+
+        <div class="footer-info-item">
+            <div class="info-icon">
+                <img src="img/imgi_14_5bc61fa61d93fd9e7976d4af_icons8-marker-80 (1).png" alt="Find">
+            </div>
+            <h3>FIND</h3>
+            <p>Central Park, Manhattan<br>New York, 1101</p>
+        </div>
+
+        <div class="footer-info-item">
+            <div class="info-icon">
+                <img src="img/imgi_15_5bc61f741d93fdca4176d416_icons8-ringer-volume-80.png" alt="Call">
+            </div>
+            <h3>CALL</h3>
+            <p><a href="tel:+1292345678">+1 292 345 678</a></p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>Template design by <strong>Dorian Hoxha</strong> - Image License Info Powered by <strong>Webflow</strong></p>
+    </div>
+</footer>
+<hr>
+        </body>
+        </html>
