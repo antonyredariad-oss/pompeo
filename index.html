@@ -135,6 +135,10 @@
             transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
+.btn-shop:hover{
+    animation: pulse 2s infinite;
+}
+
         .btn-shop:hover {
             background-color: #8e1414;
             transform: translateY(-2px);
@@ -145,7 +149,20 @@
             display: flex;
             justify-content: flex-end;
             position: relative;
+            animation: float 2s infinite;
         }
+
+@keyframes float{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-20px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
 
         .hero-image img {
             max-width: 100%;
@@ -213,6 +230,10 @@
             align-items: center;
             text-decoration: none;
         }
+
+.circle-item:hover{
+    animation: pulse 2s infinite;
+}
 
         .circle-bg {
             width: 210px;
@@ -516,6 +537,11 @@
     letter-spacing: 2px;
     transition: background-color 0.3s;
 }
+
+.btn-collection:hover{
+animation: pulse 2s infinite;
+}
+
 .newsletter-section {
     padding: 100px 10%;
     background-color: #ffffff;
@@ -731,6 +757,22 @@
     padding-top: 30px;
 }
 
+.footer-bottom:hover{
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
 .footer-bottom p {
     color: #999999;
     font-size: 12px;
@@ -789,9 +831,9 @@
             </div>
         </div>
     </section>
-<br>
-<hr>
-<br>
+
+
+
     <section class="categories-section">
         <div class="vertical-text">HAND CRAFT POTTERY</div>
         
@@ -818,9 +860,9 @@
                 </div>
             </a>
 </div>
-<br>
-<hr>
-<br>
+
+
+
    <h1>Unique Porcelain & Stone Collection</h1> 
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus posuere.</p>
    
@@ -852,12 +894,11 @@
             </div>
         </div>
     </section>
+
+
 <div class="side-tag">OUR ONLINE STORE</div>
 <p class="section-tag">OUR ONLINE STORE</p>
 <h2>Pottery Collection</h2>
-<br>
-<hr>
-<br>
 <div class="collection-grid">
     <div class="collection-item">
         <div class="collection-item__image-box">
@@ -883,6 +924,7 @@
         <p class="collection-item__price">$ 125.00 USD</p>
     </div>
 </div>
+
 
 <div class="collection-grid">
     <div class="collection-item">
@@ -910,6 +952,7 @@
     </div>
 </div>
 
+
 <div class="collection-action">
     <a href="#" class="btn-view-all">VIEW ALL PRODUCTS</a>
 </div>
@@ -925,9 +968,9 @@
     </div>
 </section>
     </div>
-<br>
-<hr>
-<br>
+
+    
+
 <section class="newsletter-section">
     <div class="newsletter-icon">
         <img src="img/imgi_32_5baf7b8b7a16ad6c3bda1f4d_icons8-paper-plane-64.png" alt="Newsletter Icon">
@@ -986,6 +1029,6 @@
         <p>Template design by <strong>Dorian Hoxha</strong> - Image License Info Powered by <strong>Webflow</strong></p>
     </div>
 </footer>
-<hr>
+<p>Template design by Dorian Hoxha - Image License InfoPowered by Webflow</p>
         </body>
         </html>
